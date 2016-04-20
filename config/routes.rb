@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   get '/products/new', to: 'products#new'
 
+  post '/products', to: 'products#create'
+
+  get '/products/saved', to: 'products#saved'
+
   get '/bids', to: 'bids#index', as: :bids
 
 

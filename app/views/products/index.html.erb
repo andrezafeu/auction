@@ -1,1 +1,7 @@
 <h1>Products</h1>
+	<% @products.each do |product| %>
+		<li>
+			<%= product.title %>
+			<%= product.description %>
+		</li>
+	<% end %>
