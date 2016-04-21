@@ -13,18 +13,18 @@ class ProductsController < ApplicationController
 			:description => params[:product][:description],
 			:bidding => params[:product][:bidding])
 		@the_product.save
-		redirect_to "/products/saved"
-		# redirect_to "/products/#{@my_product.id}"
+		# redirect_to "/products/saved"
+		redirect_to "/products/#{@the_product.id}"
 	end
 	def show
 		@the_product = Product.find_by(id:params[:id])
 		unless @the_product
 			render "no_projects_found"
+		end
 	end
-	end
-	def saved
-		render 'saved'
-	end
+	# def saved
+	# 	render 'saved'
+	# end
 	# def save
 	# 	@the_product.save
 	# end

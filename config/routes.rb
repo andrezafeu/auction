@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/products/:id', to: 'products#show'
 
-  get '/products/saved', to: 'products#saved'
+  # get '/products/saved', to: 'products#saved'
 
   get '/bids', to: 'bids#index', as: :bids
 

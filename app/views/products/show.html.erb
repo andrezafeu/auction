@@ -1,7 +1,4 @@
 <h3><%= @the_product.title %></h3>
 <p><%= @the_product.description %></p>
-<% @the_product.bids.each do |bid| %>
-	<p>Bid: <%= bid.value %></p>
-<% end %>
 <br>
 <%= link_to 'Return to products\'s page', products_path %>
