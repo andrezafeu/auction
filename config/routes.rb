@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/products', to: 'products#create'
 
+  get '/products/:id', to: 'products#show'
+
   get '/products/saved', to: 'products#saved'
 
   get '/bids', to: 'bids#index', as: :bids
