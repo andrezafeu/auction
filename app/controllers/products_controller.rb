@@ -16,6 +16,12 @@ class ProductsController < ApplicationController
 		redirect_to "/products/saved"
 		# redirect_to "/products/#{@my_product.id}"
 	end
+	def show
+		@the_product = Product.find_by(id:params[:id])
+		unless @the_product
+			render "no_projects_found"
+	end
+	end
 	def saved
 		render 'saved'
 	end
