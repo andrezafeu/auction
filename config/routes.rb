@@ -1,18 +1,24 @@
 Rails.application.routes.draw do
 
-  get '/users', to: 'users#index', as: :users
+  resources :users, only: [:index, :show, :new, :create]
 
-  get '/products', to: 'products#index', as: :products
+  resources :products, only [:index, :show, :new, :create] do
+    resources :bids, only [:index, :create]
+  end
 
-  get '/products/new', to: 'products#new', as: :new_product 
+  # get '/users', to: 'users#index', as: :users
 
-  post '/products', to: 'products#create'
+  # get '/products', to: 'products#index', as: :products
 
-  get '/products/:id', to: 'products#show'
+  # get '/products/new', to: 'products#new', as: :new_product 
+
+  # post '/products', to: 'products#create'
+
+  # get '/products/:id', to: 'products#show'
 
   # get '/products/saved', to: 'products#saved'
 
-  get '/bids', to: 'bids#index', as: :bids
+  # get '/bids', to: 'bids#index', as: :bids
 
 
   # The priority is based upon order of creation: first created -> highest priority.
