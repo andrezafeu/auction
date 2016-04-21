@@ -2,4 +2,12 @@
 <p><%= @the_product.description %></p>
 <p>Bidding Deadline: <%= @the_product.bidding %></p>
 <br>
+<h4>Bid on this product:</h4>
+
+<%=  form_for @the_bid do |f| %>
+	<%= f.label :value %>
+	<%=f.float_field :value %>
+	<%= f.button %>
+<% end %>
+
 <%= link_to 'Return to products\'s page', products_path %>
