@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :new, :create]
 
-  resources :products, only [:index, :show, :new, :create] do
-    resources :bids, only [:index, :create]
+  resources :products, only: [:index, :show, :new, :create] do
+    resources :bids, only: [:index, :create, :new]
   end
 
   # get '/users', to: 'users#index', as: :users

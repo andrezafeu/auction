@@ -17,7 +17,8 @@ class ProductsController < ApplicationController
 		redirect_to "/products/#{@the_product.id}"
 	end
 	def show
-		@the_product = Product.find_by(id:params[:id])
+		@the_product = Product.find_by(id: params[:id])
+		@the_bid = @the_product.bids.new	
 		unless @the_product
 			render "no_projects_found"
 		end

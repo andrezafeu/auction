@@ -4,9 +4,9 @@
 <br>
 <h4>Bid on this product:</h4>
 
-<%=  form_for @the_bid do |f| %>
+<%=  form_for [@the_product, @the_bid] do |f| %>
 	<%= f.label :value %>
-	<%=f.float_field :value %>
+	<%=f.number_field :value, :step => 'any' %>
 	<%= f.button %>
 <% end %>
 
